@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title> SignUp </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form id="signup">
+                <p> Create your account </p>
+                <div id="login"> Already have an account?
+                    <a href="abc"> Login </a>
+                </div>
+            <div id="main">
+                <fieldset> 
+                    <legend> Personal Details </legend>
+                    <input id="sname" placeholder="Name">
+                    <input id="email" placeholder="Email Id">
+                    <input type="text" pattern="[0-9]{10}" id="phnum" placeholder="Phone Number">
+                    <input type="date">
+                    <div id="gender"> 
+                        <label for="rb" id="rb"> Gender </label>
+                        <input type="radio" name="gender" value="male" id="male">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" value="female" id="female">
+                        <label for="female">Female</label>
+                        <input type="radio" name="gender" value="none" id="none">
+                        <label for="none">None</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend> College Details </legend>
+                    <input id="uni" placeholder="University Name">
+                    <input id="clg" placeholder="College Name">
+                    <input id="crs" placeholder="Course">
+                    <div id="rr">
+                        <input id="roll" placeholder="Roll Number">
+                        <input id="regis" placeholder="Registration Number">
+                    </div>
+                    <select id="sem">
+                        <option value="s" id="sems"> Semester </option>
+                        <option value="I"> I </option>
+                        <option value="II"> II </option>
+                        <option value="III"> III </option>
+                        <option value="IV"> IV </option>
+                        <option value="V"> V </option>
+                        <option value="VI"> VI </option>
+                        <option value="VII"> VII </option>
+                        <option value="VIII"> VIII </option>
+                    </select>
+                </fieldset>
+                </div>
+                <div id="main1">
+                    <fieldset id="pss">
+                        <legend> Password </legend>
+                        <input id="pass" placeholder="Password"> 
+                        <input id="confirmpass" placeholder="Confirm Password">
+                    </fieldset>
+                </div>
+                <div id="main">
+                    <button id="sign"> SignUp </button><br>
+                </div>
+        </form>
+        
+         
+    </body>
+</html>

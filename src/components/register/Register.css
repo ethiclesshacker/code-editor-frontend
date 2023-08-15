@@ -1,0 +1,141 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecf9ff;
+}
+
+#register-main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+p {
+    margin-left: 35%;
+    font-size: 2rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#register-login {
+    margin-left: 35%;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+fieldset > input {
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    width: 25rem;
+    height: 2.5rem;
+    padding-left: 0.5rem;
+    border-bottom: 0.1rem solid black;
+    font-size: 1rem;
+    background-color: #ecf9ff;
+}
+
+fieldset > input[type=radio],
+fieldset > input.radio {
+      float: left;
+      clear: none;
+      margin: 2px 0 0 2px;
+      width: 5rem;
+      height: 0.8rem;
+      margin-top: 1rem;
+}
+
+fieldset > input:focus {
+    outline: none;
+}
+
+fieldset > select {
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    width: 25rem;
+    height: 2.5rem;
+    padding-left: 0.5rem;
+    border-bottom: 0.1rem solid black;
+    background-color: #ecf9ff;
+}
+
+fieldset > label {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 0px 1em 0px 8px;
+    margin-left: -2rem;
+    font-size: 1.05rem;
+    margin-top: 0.8rem;
+}
+
+#register-rb {
+    margin-left: -0.2rem;
+    font-size: 1.1rem;
+    margin-right: -1.5rem;
+    /* margin-top: -0.09rem; */
+    margin-top: 0.7rem;
+}
+
+fieldset > button {
+    margin-left: 50%;
+    border: none;
+    border: 0.1rem 4d73cf;
+    color: ffffff;
+    font-family: sans-serif;
+    margin-top: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 25rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    background-color: 4d73cf;
+    font-size: 1.2rem;
+}
+
+fieldset {
+    margin-top: 0.2rem;
+    /* margin-bottom: 0.5rem; */
+    margin-right: 0.4rem;
+}
+
+legend {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#register-rr {
+    display: grid;
+    grid-template-columns: 10rem 15rem;
+}
+
+#register-roll {
+    width: 10rem;
+    height: 2.5rem;
+    margin-right: 2rem;
+}
+
+#register-regis {
+    margin-left: 0.5rem;
+    width: 14.5rem;
+    height: 2.5rem;
+}
+
+option {
+    font-size: 1rem;
+}
+
+#pss {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#pass {
+    margin-left: 1rem;
+}
+
+#confirmpass {
+    margin-left: 0.5rem;
+}
