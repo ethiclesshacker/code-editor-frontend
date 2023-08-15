@@ -7,7 +7,7 @@ export default function Login() {
             <div id="login-main">
                 <div id="login-head"> Login </div>
                 <input id="login-uname" placeholder="Enter Username" />
-                <input id="login-pass" placeholder="Enter Password" />
+                <input type="password" id="login-pass" placeholder="Enter Password" />
                 <button id="login-log"> Login </button>
                 <div id="login-fp">
                     <a href="abc"> Forgot Password? </a>

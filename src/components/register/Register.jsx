@@ -1,64 +1,66 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Register.css"
+// import "./Register.css"
 
 export default function Register(){
     return (
-        <form id="register-signup">
-                <p> Create your account </p>
-                <div id="register-login"> Already have an account?
-                    <Link to="/login"> Login </Link>
-                </div>
-            <div id="register-main">
-                <fieldset> 
-                    <legend> Personal Details </legend>
-                    <input id="register-sname" placeholder="Name"/>
-                    <input id="register-email" placeholder="Email Id"/>
-                    <input type="text" pattern="[0-9]{10}" id="register-phnum" placeholder="Phone Number"/>
-                    <input type="date"/>
+        <div className="flex justify-center items-center bg-blue-50">
+        <form>
+            <p className="mt-16 text-3xl font-serif font-bold ml-64"> Create your account </p>
+            <div className="mb-3 ml-72"> Already have an account?
+                <Link to="/login"> Login </Link>
+            </div>
+            <div id="register-main" className="grid grid-cols-2 gap-4">
+                <fieldset className="mt-1 mr-1.5 pl-2 pb-2 pr-2 border border-solid border-slate-950"> 
+                    <legend className="mb-2 text-2xl"> Personal Details </legend>
+                    <input placeholder="Name" className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"/>
+                    <input placeholder="Email Id" className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"/>
+                    <input type="text" pattern="[0-9]{10}" placeholder="Phone Number" className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"/>
+                    <input type="date" className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"/>
                     <div id="register-gender"> 
-                        <label for="rb" id="register-rb"> Gender </label>
-                        <input type="radio" name="male" value="male" id="register-male"/>
-                        <label for="Male">Male</label>
-                        <input type="radio" value="female" id="register-female"/>
-                        <label for="female">Female</label>
-                        <input type="radio" value="none" id="register-none"/>
-                        <label for="none">None</label>
+                        <label for="rb" className="float-left -mr-2 text-base"> Gender </label>
+                        <input type="radio" name="male" value="male" className="float-left mt-2 w-20 h-3"/>
+                        <label for="Male" className="float-left -ml-6 -mr-2 text-base">Male</label>
+                        <input type="radio" value="female" className="float-left mt-2 w-20 h-3"/>
+                        <label for="female" className="float-left -mr-2 -ml-6 text-base">Female</label>
+                        <input type="radio" value="none" className="float-left mt-2 w-20 w-20 h-3"/>
+                        <label for="none" className="float-left -ml-6 -mr-2 text-base">Other</label>
                     </div>
                 </fieldset>
-                <fieldset>
-                    <legend> College Details </legend>
-                    <input id="register-uni" placeholder="University Name"/>
-                    <input id="register-clg" placeholder="College Name"/>
-                    <input id="register-crs" placeholder="Course"/>
-                    <div id="register-rr">
-                        <input id="register-roll" placeholder="Roll Number"/>
-                        <input id="register-regis" placeholder="Registration Number"/>
+                <fieldset className="mt-1 mr-1.5 pl-2 pb-2 pr-2 border border-solid border-slate-950">
+                    <legend className="mb-2 text-2xl"> College Details </legend>
+                    <input className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none" placeholder="University Name"/>
+                    <input className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none" placeholder="College Name"/>
+                    <input className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none" placeholder="Course"/>
+                    <div className="grid grid-cols-2 gap-x-0">
+                        <input className="flex justify-end mb-4 w-36 h-10 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none " placeholder="Roll Number"/>
+                        <input className="flex justify-end mb-4 -ml-8 w-56 h-10 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none" placeholder="Registration Number"/>
                     </div>
-                    <select id="register-sem">
-                        <option value="s" id="register-sems"> Semester </option>
-                        <option value="I"> I </option>
-                        <option value="II"> II </option>
-                        <option value="III"> III </option>
-                        <option value="IV"> IV </option>
-                        <option value="V"> V </option>
-                        <option value="VI"> VI </option>
-                        <option value="VII"> VII </option>
-                        <option value="VIII"> VIII </option>
+                    <select className="flex justify-end mb-px w-96 h-10 pl-2 border-b border-solid border-slate-950 bg-blue-50">
+                        <option value="s" className="text-base"> Semester </option>
+                        <option value="I" className="text-base"> I </option>
+                        <option value="II" className="text-base"> II </option>
+                        <option value="III" className="text-base"> III </option>
+                        <option value="IV" className="text-base"> IV </option>
+                        <option value="V" className="text-base"> V </option>
+                        <option value="VI" className="text-base"> VI </option>
+                        <option value="VII" className="text-base"> VII </option>
+                        <option value="VIII" className="text-base"> VIII </option>
                     </select>
                 </fieldset>
-                </div>
-                <div id="register-main1">
-                    <fieldset id="register-pss">
-                        <legend> Password </legend>
-                        <input id="register-pass" placeholder="Password"/> 
-                        <input id="register-confirmpass" placeholder="Confirm Password"/>
+            </div>
+                <div>
+                    <fieldset className="grid grid-cols-2 mt-1 mr-1.5 pl-2 pb-2 pr-2 border border-solid border-slate-950">
+                        <legend className="mb-2 text-2xl"> Password </legend>
+                        <input type="password" className="mb-4 w-96 h-10 pl-2 ml-4 border-b border-solid border-slate-950 text-base bg-blue-50" placeholder="Password"/> 
+                        <input type="password" className="mb-4 w-96 h-10 pl-2 ml-2 border-b border-solid border-slate-950 text-base bg-blue-50" placeholder="Confirm Password"/>
                     </fieldset>
                 </div>
-                <div id="register-main">
-                    <button id="register-sign"> SignUp </button>
+                <div>
+                    <button className="ml-56 font-sans border border-solid border-blue-700 text-center w-96 h-10 bg-blue-700 text-base mt-3.5 mb-6"> SignUp </button>
                     <br/>
                 </div>
         </form>
+        </div>
     );
 }

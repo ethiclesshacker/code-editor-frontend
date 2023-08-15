@@ -65,7 +65,7 @@ fieldset > label {
     float: left;
     clear: none;
     display: block;
-    padding: 0px 1em 0px 8px;
+    padding: 0px 1rem 0px 8px;
     margin-left: -2rem;
     font-size: 1.05rem;
     margin-top: 0.8rem;
@@ -127,15 +127,15 @@ option {
     font-size: 1rem;
 }
 
-#pss {
+#register-pss {
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
-#pass {
+#register-pass {
     margin-left: 1rem;
 }
 
-#confirmpass {
+#register-confirmpass {
     margin-left: 0.5rem;
 }
