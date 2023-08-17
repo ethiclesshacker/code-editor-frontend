@@ -23,15 +23,19 @@ export default function Login() {
           clientId={clientId}
           buttonText="Login with Google"
           onSuccess={onSuccess}
+          theme="filled_black"
+          width='240px'
+          
           onFailure={onFailure}
           cookiePolicy={"single_host_origin"}
-          style={{
-            marginBottom: "100px",
-            width: 50,
-            // borderWidth: "6px",
-            // borderStyle: "solid",
-            // borderColor: "red",
-          }}
+          // style={{
+          //   marginBottom: "100px",
+          //   maxWidth: '309px',
+          //   size: 'large'
+          //   // borderWidth: "6px",
+          //   // borderStyle: "solid",
+          //   // borderColor: "red",
+          // }}
           isSignedIn={true}
         />
       </div>
