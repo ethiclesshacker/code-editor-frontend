@@ -3,7 +3,7 @@ import React from "react";
 export default function CodeEditor(){
 
 return (
-    <div id="main" className="grid grid-cols-3 col-span-4">
+    <div id="main" className="grid grid-cols-3 col-span-2">
         <div id="sidebar">
             <select name="lang" id="lang">
                 <option value="python3">Python3</option>

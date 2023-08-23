@@ -18,28 +18,7 @@ export default function Login() {
 
   return (
     <div>
-      <div>
-        <GoogleLogin
-          clientId={clientId}
-          buttonText="Login with Google"
-          onSuccess={onSuccess}
-          theme="filled_black"
-          width='240px'
-          
-          onFailure={onFailure}
-          cookiePolicy={"single_host_origin"}
-          // style={{
-          //   marginBottom: "100px",
-          //   maxWidth: '309px',
-          //   size: 'large'
-          //   // borderWidth: "6px",
-          //   // borderStyle: "solid",
-          //   // borderColor: "red",
-          // }}
-          isSignedIn={true}
-        />
-      </div>
-      <div className="shadow-2xl bg-[#ecf9ff] rounded-lg text-center w-80 h-80 border border-solid border-blue-50">
+      <div className="shadow-2xl bg-[#ecf9ff] rounded-lg text-center w-80 h-96 border border-solid border-blue-50">
         <div className="mb-4 pt-7 font-serif text-2xl"> Login </div>
         <input
           type="text"
@@ -76,6 +55,17 @@ export default function Login() {
             Register{" "}
           </Link>
         </div>
+        <p className="mt-1.5 mb-1.5"> or </p>
+      <div>
+        <GoogleLogin
+          clientId={clientId}
+          buttonText="Login with Google"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={"single_host_origin"}
+          isSignedIn={true}
+        />
+      </div>
       </div>
     </div>
   );
