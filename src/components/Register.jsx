@@ -16,7 +16,7 @@ export default function Register(){
     const [universityName, setUniversityName] = useState("");
     const [collegeName, setCollegeName] = useState("");
     const [courseName, setCourseName] = useState("");
-    const [roll, setRoll] = useState("");
+    const [rollNumber, setRollNumber] = useState("");
     const [registrationNumber, setRegistrationNumber] = useState("");
     const [semester, setSemester] = useState("");
 
@@ -54,7 +54,7 @@ export default function Register(){
                         <input type="radio" value="gender" className="float-left mt-2 w-20 h-3"/>
                         <label for="gender" className="float-left -mr-2 -ml-6 text-base">Female</label>
 
-                        <input type="radio" name="gender" value="other" className="float-left mt-2 w-20 w-20 h-3"/>
+                        <input type="radio" name="gender" value="other" className="float-left mt-2 w-20 h-3"/>
                         <label for="gender" className="float-left -ml-6 -mr-2 text-base">Other</label>
                     </div>
                 </fieldset>
@@ -64,7 +64,7 @@ export default function Register(){
                     <input value={collegeName} onChange={event => setCollegeName(event.target.value)} className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none" placeholder="College Name"/>
                     <input value={courseName} onChange={event => setCourseName(event.target.value)} className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none" placeholder="Course"/>
                     <div className="grid grid-cols-2 gap-x-0">
-                        <input value={roll} onChange={event => setRoll(event.target.value)} className="flex justify-end mb-4 w-36 h-10 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none " placeholder="Roll Number"/>
+                        <input value={rollNumber} onChange={event => setRollNumber(event.target.value)} className="flex justify-end mb-4 w-36 h-10 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none " placeholder="Roll Number"/>
                         <input value={registrationNumber} onChange={event => setRegistrationNumber(event.target.value)} className="flex justify-end mb-4 -ml-8 w-56 h-10 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none" placeholder="Registration Number"/>
                     </div>
                     <select value={semester} onChange={event => setSemester(event.target.value)} className="flex justify-end mb-px w-96 h-10 pl-2 border-b border-solid border-slate-950 bg-blue-50">
