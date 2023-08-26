@@ -1,7 +1,6 @@
 import React from "react";
 import CodeMirror from '@uiw/react-codemirror';
 
-
 export default function CodeEditor() {
     return (
         <div id="main" className="grid grid-cols-5 grid-rows-5 h-[100%]">
