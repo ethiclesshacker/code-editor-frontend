@@ -1,16 +1,45 @@
 import React, { useEffect, useState } from "react";
 import CodeMirror from '@uiw/react-codemirror';
+import axios from "axios";
 
 
 
 export default function CodeEditor() {
 
-    const [codeValue, setCodeValue] = useState("console.log('Hello')");
+    const [codeValue, setCodeValue] = useState("print('Hello World!')");
+    const [outputText, setOutputText] = useState("");
 
-    useEffect(()=>{
-        console.log(codeValue);
-    },[codeValue])
-    
+    // useEffect(() => {
+    //     console.log(codeValue);
+    // }, [codeValue])
+
+    function runCode() {
+        const data = {
+            "code": codeValue,
+            "codeLanguage": "python3"
+        }
+
+        const API_URL = "http://localhost:5050";
+        const API_ENDPOINT = '/api/code/run';
+        const API = `${API_URL}${API_ENDPOINT}`;
+        const options = {
+            method: 'POST',
+            mode: 'no-cors',
+            url: API,
+            headers: { 'Content-Type': 'application/json' },
+            data: JSON.stringify(data)
+        };
+
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+            setOutputText(response.data.output);
+
+        }).catch(function (error) {
+            console.error(error);
+            alert("Axios Error");
+        });
+    }
+
     return (
         <div id="main" className="grid grid-cols-5 grid-rows-5 h-[100%]">
             {/* <!-- Element 1: Header--> */}
@@ -26,7 +55,7 @@ export default function CodeEditor() {
                 </select>
                 {/* <!-- <button id="js">JS</button> --> */}
                 <button type="reset" id="rst" onClick={() => setCodeValue("")}>Clear</button>
-                <button id="run">Run</button>
+                <button id="run" onClick={runCode} > Run </button>
             </div>
 
             {/* <!-- Element 2: Code Holder --> */}
@@ -50,15 +79,12 @@ export default function CodeEditor() {
             {/* <!-- ELement 3: I/O --> */}
             <div id="sidebar1" className="col-span-1 col-start-5 row-start-2 row-span-4 flex flex-col">
                 <div id="cont-input" className="flex-1 flex flex-col">
-                    <label for="input">Input: </label>
-                    {/* <br /> */}
+                    <label htmlFor="input">Input: </label>
                     <textarea className="box flex-1" name="input" type="text" id="input"></textarea>
                 </div>
                 <div id="cont-output" className="flex-1 flex flex-col">
-                    <label for="output">Output: </label>
-                    {/* <br /> */}
-                    {/* <textarea name="input" type="text" id="input"></textarea> */}
-                    <pre className="box flex-1"> </pre>
+                    <label htmlFor="output">Output: </label>
+                    <pre id="output" name="output" className="box flex-1"> {outputText} </pre>
                 </div>
             </div>
         </div>

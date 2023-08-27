@@ -26,7 +26,9 @@ export default function Login() {
 
   function loginUser() {
     // alert(`Logging in user... ${email} ${password}`);
-    const API = 'http://localhost:5050/api/users/login';
+    const API_URL = "http://localhost:5050"
+    const API_ENDPOINT = '/api/users/login'
+    const API = `${API_URL}${API_ENDPOINT}`;
     const options = {
       method: 'POST',
       mode: 'no-cors',
