@@ -62,7 +62,6 @@ export default function Login() {
       });
     }
   }
-
   return (
     <div>
       <div className="shadow-2xl bg-[#ecf9ff] rounded-lg text-center w-80 h-96 border border-solid border-blue-50">

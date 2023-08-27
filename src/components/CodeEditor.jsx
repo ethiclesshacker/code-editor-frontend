@@ -50,7 +50,7 @@ export default function CodeEditor() {
                 <select name="lang" id="lang">
                     <option value="python3">Python3</option>
                     <option value="javascript">Javascript</option>
-                    <option value="c">c</option>
+                    <option value="c">C</option>
                     <option value="java">Java</option>
                 </select>
                 {/* <!-- <button id="js">JS</button> --> */}
@@ -77,13 +77,14 @@ export default function CodeEditor() {
 
 
             {/* <!-- ELement 3: I/O --> */}
-            <div id="sidebar1" className="col-span-1 col-start-5 row-start-2 row-span-4 flex flex-col">
-                <div id="cont-input" className="flex-1 flex flex-col">
-                    <label htmlFor="input">Input: </label>
+            <div id="sidebar1" className="col-span-1 col-start-5 row-start-2 row-span-4 flex flex-col pr-4 p-4 pb-4 pt-4 h-[100%] bg-[#282c34] flex flex-col rounded-lg">
+                <div id="cont-input" className="flex-1 flex flex-col w-[100%] h-[50%] p-1">
+                    <label for="input" className="text-2xl text-white">Input: </label>
+                    {/* <br /> */}
                     <textarea className="box flex-1" name="input" type="text" id="input"></textarea>
                 </div>
-                <div id="cont-output" className="flex-1 flex flex-col">
-                    <label htmlFor="output">Output: </label>
+                <div id="cont-output" className="flex-1 flex flex-col w-[100%] h-[50%] p-1">
+                    <label htmlFor="output" className="text-2xl text-white">Output: </label>
                     <pre id="output" name="output" className="box flex-1"> {outputText} </pre>
                 </div>
             </div>
