@@ -39,25 +39,26 @@ export default function CodeEditor() {
     }
 
     return (
-        <div id="main" className="grid grid-cols-10 grid-rows-5 h-[100%]">
+        <div id="main" className="grid grid-cols-10 grid-rows-10 h-[100%]">
             {/* <!-- Element 1: Header--> */}
-            <div id="sidebar" className="row-span-1 col-span-10 col-start-1 row-start-1 max-h-[20%] border border-solid border-gray-400 bg-[#282c34] rounded-lg flex items-center justify-end pr-2">
-                {/* <div className="text-2xl text-center">
+            <div id="topbar" className="col-span-7 col-start-1 row-start-1 row-span-1 border border-solid border-gray-400 bg-[#282c34] rounded-lg pr-2 flex justify-between items-center">
+                {/* <div className="text-2xl text-center text-white">
                     Code Editor
                 </div> */}
-                <select name="lang" id="lang" className="mr-auto ml-2 text-lg w-40 rounded-lg">
-                    <option value="python3">Python3</option>
-                    <option value="javascript">Javascript</option>
-                    <option value="c">C</option>
-                    <option value="java">Java</option>
-                </select>
-                {/* <!-- <button id="js">JS</button> --> */}
-                <button type="reset" id="rst" onClick={() => setCodeValue("")} className="mr-2 text-xl rounded-md border border-solid border-gray-400 bg-gray-200 text-center w-20 h-10">Clear</button>
-                <button id="run" onClick={runCode} className="w-20 h-10 text-xl rounded-md border border-solid border-gray-400 bg-gray-200 text-center"> Run </button>
+                
+                    <select name="lang" id="lang" className="mr-auto ml-2 text-lg w-40 rounded-lg">
+                        <option value="python3">Python3</option>
+                        <option value="javascript">Javascript</option>
+                        <option value="c">C</option>
+                        <option value="java">Java</option>
+                    </select>
+                    {/* <!-- <button id="js">JS</button> --> */}
+                    <button type="reset" id="rst" onClick={() => setCodeValue("")} className="mr-2 text-xl rounded-md border border-solid border-gray-400 bg-gray-200 text-center w-20 h-10">Clear</button>
+                    <button id="run" onClick={runCode} className="w-20 h-10 text-xl rounded-md border border-solid border-gray-400 bg-gray-200 text-center"> Run </button>
             </div>
 
             {/* <!-- Element 2: Code Holder --> */}
-            <div id="scode" className="col-span-7 row-span-4 col-start-1 row-start-2 border border-solid border-black">
+            <div id="scode" className="col-span-7 row-span-9 col-start-1 row-start-2 border border-solid border-black">
                 <div name="code" id="code-text" className="w-[100%] h-[100%] p-2 m-0 text-lg">
                     <CodeMirror
                         value={codeValue}
@@ -75,7 +76,7 @@ export default function CodeEditor() {
 
 
             {/* <!-- ELement 3: I/O --> */}
-            <div id="sidebar1" className="col-span-3 col-start-8 row-start-2 row-span-4 flex flex-col pr-4 p-4 pb-4 pt-4 h-[100%] bg-[#282c34] rounded-lg">
+            <div id="sidebar1" className="col-span-3 col-start-8 row-start-1 row-span-full flex flex-col pr-4 p-4 pb-4 pt-4 bg-[#282c34] rounded-lg">
                 <div id="cont-input" className="flex-1 flex flex-col w-[100%] h-[50%] p-1">
                     <label for="input" className="text-2xl text-white">Input: </label>
                     {/* <br /> */}
