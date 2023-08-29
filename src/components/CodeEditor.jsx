@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import CodeMirror from '@uiw/react-codemirror';
 import axios from "axios";
 
-
-
 export default function CodeEditor() {
 
     const [codeValue, setCodeValue] = useState("print('Hello World!')");
