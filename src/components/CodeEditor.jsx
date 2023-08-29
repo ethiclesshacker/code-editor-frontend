@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CodeMirror from '@uiw/react-codemirror';
 import axios from "axios";
 
@@ -77,7 +77,7 @@ export default function CodeEditor() {
 
 
             {/* <!-- ELement 3: I/O --> */}
-            <div id="sidebar1" className="col-span-1 col-start-5 row-start-2 row-span-4 flex flex-col pr-4 p-4 pb-4 pt-4 h-[100%] bg-[#282c34] flex flex-col rounded-lg">
+            <div id="sidebar1" className="col-span-1 col-start-5 row-start-2 row-span-4 flex flex-col pr-4 p-4 pb-4 pt-4 h-[100%] bg-[#282c34] rounded-lg">
                 <div id="cont-input" className="flex-1 flex flex-col w-[100%] h-[50%] p-1">
                     <label for="input" className="text-2xl text-white">Input: </label>
                     {/* <br /> */}
