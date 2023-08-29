@@ -39,7 +39,7 @@ export default function CodeEditor() {
     }
 
     return (
-        <div id="main" className="grid grid-cols-10 grid-rows-10 h-[100%]">
+        <div id="main" className="grid grid-cols-10 grid-rows-10 h-[100%] gap-2">
             {/* <!-- Element 1: Header--> */}
             <div id="topbar" className="col-span-7 col-start-1 row-start-1 row-span-1 border border-solid border-gray-400 bg-[#282c34] rounded-lg pr-2 flex justify-between items-center">
                 {/* <div className="text-2xl text-center text-white">
@@ -58,8 +58,8 @@ export default function CodeEditor() {
             </div>
 
             {/* <!-- Element 2: Code Holder --> */}
-            <div id="scode" className="col-span-7 row-span-9 col-start-1 row-start-2 border border-solid border-black">
-                <div name="code" id="code-text" className="w-[100%] h-[100%] p-2 m-0 text-lg">
+            <div id="scode" className="col-span-7 row-span-9 col-start-1 row-start-2 h-[100%] border border-solid border-black">
+                <div name="code" id="code-text" className="p-2 m-0 text-lg">
                     <CodeMirror
                         value={codeValue}
                         options={{
