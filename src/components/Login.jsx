@@ -48,10 +48,7 @@ export default function Login() {
           localStorage.setItem("authenticationToken", response.data.token);
           setAuthenticated(true);
           console.log(localStorage.getItem("authenticated"))
-          if (response.data.roleId === 0)
-            navigate("/");
-          if (response.data.roleId === 1)
-            navigate("/")
+          navigate("/code");
         }
         else {
           alert("Username or password is wrong!!");
@@ -63,8 +60,8 @@ export default function Login() {
     }
   }
   return (
-    <div>
-      <div className="shadow-2xl bg-[#ecf9ff] rounded-lg text-center w-80 h-96 border border-solid border-blue-50">
+    <div className="flex items-center justify-center h-[100%]">
+      <div className="shadow-2xl bg-[#ecf9ff] rounded-lg text-center w-80 h-96 border border-solid border-blue-50 ">
         <div className="mb-4 pt-7 font-serif text-2xl"> Login </div>
         <input
           type="email"

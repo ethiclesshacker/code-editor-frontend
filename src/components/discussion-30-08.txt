@@ -1,0 +1,12 @@
+roles
+SuperAdmin
+Admin
+Teacher
+Student
+
+user interface add * for compulsory
+add google login
+backend conn with reg
+age validation???
+phone number compulsory???
+gender??
