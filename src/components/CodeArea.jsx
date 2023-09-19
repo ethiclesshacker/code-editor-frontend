@@ -1,4 +1,4 @@
-import CodeMirror from '@uiw/react-codemirror';
+import CodeMirror from '@uiw/react-codemirror'
 // import 'codemirror/addon/display/autorefresh';
 // import 'codemirror/addon/comment/comment';
 // import 'codemirror/addon/edit/matchbrackets';
@@ -6,9 +6,9 @@ import CodeMirror from '@uiw/react-codemirror';
 // import 'codemirror/theme/monokai.css';
 
 export default function CodeArea() {
-  const code = 'const a = 0;';
+  const code = 'const a = 0;'
 
-  <CodeMirror
+  ;<CodeMirror
     value={code}
     options={{
       // theme: 'monokai',

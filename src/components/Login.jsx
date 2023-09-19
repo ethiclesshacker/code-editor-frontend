@@ -1,62 +1,67 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
-import axios from "axios";
-import { GoogleLogin } from "react-google-login";
+import axios from 'axios'
+// import { GoogleLogin } from "react-google-login";
 
 const clientId =
-  "50562650091-b2rvcd9dkm3i16h8dpae5niqejvtno62.apps.googleusercontent.com";
+  '50562650091-b2rvcd9dkm3i16h8dpae5niqejvtno62.apps.googleusercontent.com'
 
 export default function Login() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordType, setPasswordType] = useState("password");
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [passwordType, setPasswordType] = useState('password')
 
-  const [authenticated, setAuthenticated] = useState(localStorage.getItem("authenticated"));
-  const [authenticationToken, setAuthenticationToken] = useState(localStorage.getItem("authenticationToken"));
+  const [authenticated, setAuthenticated] = useState(
+    localStorage.getItem('authenticated')
+  )
+  const [authenticationToken, setAuthenticationToken] = useState(
+    localStorage.getItem('authenticationToken')
+  )
 
   const onSuccess = (res) => {
-    console.log("[Login Success] currentUser:", res.profileObj);
-  };
+    console.log('[Login Success] currentUser:', res.profileObj)
+  }
   const onFailure = (res) => {
-    console.log("[Login failed] res:", res);
-  };
+    console.log('[Login failed] res:', res)
+  }
 
   function loginUser() {
     // alert(`Logging in user... ${email} ${password}`);
-    const API_URL = "http://localhost:5050"
+    const API_URL = 'http://localhost:5050'
     const API_ENDPOINT = '/api/users/login'
-    const API = `${API_URL}${API_ENDPOINT}`;
+    const API = `${API_URL}${API_ENDPOINT}`
     const options = {
       method: 'POST',
       mode: 'no-cors',
       url: API,
       headers: { 'Content-Type': 'application/json' },
-      data: JSON.stringify({ email, password })
-    };
+      data: JSON.stringify({ email, password }),
+    }
 
     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      alert("You have entered an invalid email address!")
-    }
-    else {
-      axios.request(options).then(function (response) {
-        console.log(response.data);
-        if (response.data.token) {
-          localStorage.setItem("authenticated", true);
-          localStorage.setItem("authenticationToken", response.data.token);
-          setAuthenticated(true);
-          console.log(localStorage.getItem("authenticated"))
-          navigate("/code");
-        }
-        else {
-          alert("Username or password is wrong!!");
-        }
-      }).catch(function (error) {
-        console.error(error);
-        alert("Database/Axios Error");
-      });
+      alert('You have entered an invalid email address!')
+    } else {
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data)
+          if (response.data.token) {
+            localStorage.setItem('authenticated', true)
+            localStorage.setItem('authenticationToken', response.data.token)
+            setAuthenticated(true)
+            console.log(localStorage.getItem('authenticated'))
+            navigate('/code')
+          } else {
+            alert('Username or password is wrong!!')
+          }
+        })
+        .catch(function (error) {
+          console.error(error)
+          alert('Database/Axios Error')
+        })
     }
   }
   return (
@@ -97,8 +102,8 @@ export default function Login() {
             Register
           </Link>
         </div>
-        <p className="mt-1.5 mb-1.5"> or </p>
-        <div>
+        {/* <p className="mt-1.5 mb-1.5"> or </p>
+         <div>
           <GoogleLogin
             clientId={clientId}
             buttonText="Login with Google"
@@ -107,8 +112,8 @@ export default function Login() {
             cookiePolicy={"single_host_origin"}
             isSignedIn={true}
           />
-        </div>
+        </div> */}
       </div>
     </div>
-  );
+  )
 }
