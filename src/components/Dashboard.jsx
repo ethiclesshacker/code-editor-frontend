@@ -1,6 +1,7 @@
 import React from 'react'
 // import { useState } from "react";
 // import { Link} from "react-router-dom";
+import DashboardRow from './DashboardRow';
 
 export default function Dashboard({ children }) {
   return (
@@ -31,6 +32,7 @@ export default function Dashboard({ children }) {
           {' '}
           Hello, Saloni!{' '}
         </p>
+        <DashboardRow/>
       </div>
     </div>
   )

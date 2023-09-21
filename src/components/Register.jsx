@@ -63,7 +63,7 @@ export default function Register() {
                 }
                 type="text"
                 placeholder="Phone Number"
-                className="inline-flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+                className="inline-flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none before:content-['*']"
               />
             </div>
             <input
