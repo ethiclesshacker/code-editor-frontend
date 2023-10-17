@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import CodeEditor from './components/CodeEditor'
 import Dashboard from './components/Dashboard'
+import Logout from './components/Logout'
 
 import './App.css'
 
@@ -15,7 +16,8 @@ function App() {
         <Route exact path="/login" element={<Login />}></Route>
         <Route exact path="/register" element={<Register />}></Route>
         <Route exact path="/code" element={<CodeEditor />}></Route>
-        <Route exact path="/layout" element={<Dashboard />}></Route>
+        <Route exact path="/dashboard" element={<Dashboard />}></Route>
+        <Route exact path="/logout" element={<Logout />}></Route>
         {/* <Route exact path='/' element={< CodeArea />}></Route> */}
       </Routes>
     </Router>

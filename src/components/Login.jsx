@@ -51,6 +51,7 @@ export default function Login() {
           if (response.data.token) {
             localStorage.setItem('authenticated', true)
             localStorage.setItem('authenticationToken', response.data.token)
+            localStorage.setItem('userName', response.data.name)
             setAuthenticated(true)
             console.log(localStorage.getItem('authenticated'))
             navigate('/code')
@@ -65,34 +66,34 @@ export default function Login() {
     }
   }
   return (
-    <div className="flex items-center justify-center h-[100%]">
-      <div className="shadow-2xl bg-[#ecf9ff] rounded-lg text-center w-80 h-96 border border-solid border-blue-50 ">
+    <div className="flex h-[100%] items-center justify-center">
+      <div className="h-96 w-80 rounded-lg border border-solid border-blue-50 bg-[#ecf9ff] text-center shadow-2xl ">
         <div className="mb-4 pt-7 font-serif text-2xl"> Login </div>
         <input
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className="w-60 h-10 border-b border-solid border-black pl-2 bg-[#ecf9ff] focus:outline-none"
+          className="h-10 w-60 border-b border-solid border-black bg-[#ecf9ff] pl-2 focus:outline-none"
           placeholder="Enter Username"
         />
         <input
           type={passwordType}
           value={password}
           onChange={(event) => setPassword(event.target.value)}
-          className="w-60 h-10 border-b border-solid border-black pl-2 bg-[#ecf9ff] focus:outline-none"
+          className="h-10 w-60 border-b border-solid border-black bg-[#ecf9ff] pl-2 focus:outline-none"
           placeholder="Enter Password"
         />
         <button
           id="login-log"
           onClick={loginUser}
-          className="border-0 border-sky-600 mt-7 mb-4 
-          text-center w-60 h-10 
-          bg-sky-700 text-xl text-white"
+          className="mb-4 mt-7 h-10 w-60 
+          border-0 border-sky-600 bg-sky-700 
+          text-center text-xl text-white"
         >
           Login
         </button>
         <div id="login-fp">
-          <Link to="/" className="no-underline text-sky-800">
+          <Link to="/" className="text-sky-800 no-underline">
             Forgot Password?
           </Link>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Register() {
   // Personal Details
@@ -22,15 +23,75 @@ export default function Register() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 
+  const navigate = useNavigate()
+
   function createUser(event) {
     event.preventDefault()
-    console.log(name, email, contactNumber, userDOB, universityName)
+    console.log(
+      name,
+      email,
+      contactNumber,
+      gender,
+      userDOB,
+      universityName,
+      collegeName,
+      courseName,
+      rollNumber,
+      registrationNumber,
+      semester,
+      password
+    )
+    const API_URL = 'http://localhost:5050'
+    const API_ENDPOINT = '/api/users/register'
+    const API = `${API_URL}${API_ENDPOINT}`
+    const options = {
+      method: 'POST',
+      mode: 'no-cors',
+      url: API,
+      headers: { 'Content-Type': 'application/json' },
+      data: JSON.stringify({
+        name,
+        email,
+        contactNumber,
+        gender,
+        userDOB,
+        universityName,
+        collegeName,
+        courseName,
+        rollNumber,
+        registrationNumber,
+        semester,
+        password,
+      }),
+    }
+
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      alert('You have entered an invalid email address!')
+    } else if (password !== confirmPassword) {
+      alert('Passwords do not match!')
+    } else {
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data)
+          if (response.data.token) {
+            alert('Registration Successfully Completed, Redirecting to Login!!')
+            navigate('/login')
+          } else {
+            alert('Username or password is wrong!!')
+          }
+        })
+        .catch(function (error) {
+          console.error(error)
+          alert('Database/Axios Error')
+        })
+    }
   }
 
   return (
-    <div className="flex justify-center items-center bg-blue-50">
+    <div className="flex items-center justify-center bg-blue-50">
       <form onSubmit={createUser}>
-        <p className="mt-16 text-3xl font-serif font-bold ml-64">
+        <p className="ml-64 mt-16 font-serif text-3xl font-bold">
           {' '}
           Create your account{' '}
         </p>
@@ -40,19 +101,19 @@ export default function Register() {
           <Link to="/login"> Login </Link>
         </div>
         <div id="register-main" className="grid grid-cols-2 gap-4">
-          <fieldset className="mt-1 mr-1.5 pl-2 pb-2 pr-2 border border-solid border-slate-950">
+          <fieldset className="mr-1.5 mt-1 border border-solid border-slate-950 pb-2 pl-2 pr-2">
             <legend className="mb-2 text-2xl"> Personal Details </legend>
             <input
               value={name}
               onChange={(event) => setName(event.target.value)}
               placeholder="Name"
-              className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+              className="mb-4 flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base focus:outline-none"
             />
             <input
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Email Id"
-              className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+              className="mb-4 flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base focus:outline-none"
             />
             <div>
               <label htmlFor="contactNumber">+91</label>{' '}
@@ -63,37 +124,43 @@ export default function Register() {
                 }
                 type="text"
                 placeholder="Phone Number"
-                className="inline-flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+                className="mb-4 inline-flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base focus:outline-none"
               />
             </div>
             <input
               value={userDOB}
               onChange={(event) => setUserDOB(event.target.value)}
               type="date"
-              className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+              className="mb-4 flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base focus:outline-none"
             />
             <div id="register-gender">
-              <label for="rb" className="float-left -mr-2 text-base">
-                {' '}
-                Gender{' '}
-              </label>
+              <p className="float-left -mr-2 text-base"> Gender: </p>
 
               <input
                 type="radio"
                 name="gender"
                 value="male"
-                className="float-left mt-2 w-20 h-3"
+                className="float-left mt-2 h-3 w-20"
+                onClick={() => setGender('male')}
               />
-              <label for="gender" className="float-left -ml-6 -mr-2 text-base">
+              <label
+                htmlFor="gender"
+                className="float-left -ml-6 -mr-2 text-base"
+              >
                 Male
               </label>
 
               <input
                 type="radio"
-                value="gender"
-                className="float-left mt-2 w-20 h-3"
+                name="gender"
+                value="female"
+                className="float-left mt-2 h-3 w-20"
+                onClick={() => setGender('female')}
               />
-              <label for="gender" className="float-left -mr-2 -ml-6 text-base">
+              <label
+                htmlFor="gender"
+                className="float-left -ml-6 -mr-2 text-base"
+              >
                 Female
               </label>
 
@@ -101,51 +168,55 @@ export default function Register() {
                 type="radio"
                 name="gender"
                 value="other"
-                className="float-left mt-2 w-20 h-3"
+                className="float-left mt-2 h-3 w-20"
+                onClick={() => setGender('other')}
               />
-              <label for="gender" className="float-left -ml-6 -mr-2 text-base">
-                Other
+              <label
+                htmlFor="gender"
+                className="float-left -ml-6 -mr-2 text-base"
+              >
+                Prefer Not to Say
               </label>
             </div>
           </fieldset>
-          <fieldset className="mt-1 mr-1.5 pl-2 pb-2 pr-2 border border-solid border-slate-950">
+          <fieldset className="mr-1.5 mt-1 border border-solid border-slate-950 pb-2 pl-2 pr-2">
             <legend className="mb-2 text-2xl"> College Details </legend>
             <input
               value={universityName}
               onChange={(event) => setUniversityName(event.target.value)}
-              className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+              className="mb-4 flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base focus:outline-none"
               placeholder="University Name"
             />
             <input
               value={collegeName}
               onChange={(event) => setCollegeName(event.target.value)}
-              className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+              className="mb-4 flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base focus:outline-none"
               placeholder="College Name"
             />
             <input
               value={courseName}
               onChange={(event) => setCourseName(event.target.value)}
-              className="flex justify-end mb-4 w-96 h-10 pl-2 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+              className="mb-4 flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base focus:outline-none"
               placeholder="Course"
             />
             <div className="grid grid-cols-2 gap-x-0">
               <input
                 value={rollNumber}
                 onChange={(event) => setRollNumber(event.target.value)}
-                className="flex justify-end mb-4 w-36 h-10 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none "
+                className="mb-4 flex h-10 w-36 justify-end border-b border-solid border-slate-950 bg-blue-50 text-base focus:outline-none "
                 placeholder="Roll Number"
               />
               <input
                 value={registrationNumber}
                 onChange={(event) => setRegistrationNumber(event.target.value)}
-                className="flex justify-end mb-4 -ml-8 w-56 h-10 border-b border-solid border-slate-950 text-base bg-blue-50 focus:outline-none"
+                className="-ml-8 mb-4 flex h-10 w-56 justify-end border-b border-solid border-slate-950 bg-blue-50 text-base focus:outline-none"
                 placeholder="Registration Number"
               />
             </div>
             <select
               value={semester}
               onChange={(event) => setSemester(event.target.value)}
-              className="flex justify-end mb-px w-96 h-10 pl-2 border-b border-solid border-slate-950 bg-blue-50"
+              className="mb-px flex h-10 w-96 justify-end border-b border-solid border-slate-950 bg-blue-50 pl-2"
             >
               <option value="" className="text-base">
                 {' '}
@@ -187,26 +258,26 @@ export default function Register() {
           </fieldset>
         </div>
         <div>
-          <fieldset className="grid grid-cols-2 mt-1 mr-1.5 pl-2 pb-2 pr-2 border border-solid border-slate-950">
+          <fieldset className="mr-1.5 mt-1 grid grid-cols-2 border border-solid border-slate-950 pb-2 pl-2 pr-2">
             <legend className="mb-2 text-2xl"> Password </legend>
             <input
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               type="password"
-              className="mb-4 w-96 h-10 pl-2 ml-4 border-b border-solid border-slate-950 text-base bg-blue-50"
+              className="mb-4 ml-4 h-10 w-96 border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base"
               placeholder="Password"
             />
             <input
               value={confirmPassword}
               onChange={(event) => setConfirmPassword(event.target.value)}
               type="password"
-              className="mb-4 w-96 h-10 pl-2 ml-2 border-b border-solid border-slate-950 text-base bg-blue-50"
+              className="mb-4 ml-2 h-10 w-96 border-b border-solid border-slate-950 bg-blue-50 pl-2 text-base"
               placeholder="Confirm Password"
             />
           </fieldset>
         </div>
         <div>
-          <button className="ml-56 font-sans border border-solid border-blue-700 text-center w-96 h-10 bg-blue-700 text-base mt-3.5 mb-6">
+          <button className="mb-6 ml-56 mt-3.5 h-10 w-96 border border-solid border-blue-700 bg-blue-700 text-center font-sans text-base">
             {' '}
             SignUp{' '}
           </button>

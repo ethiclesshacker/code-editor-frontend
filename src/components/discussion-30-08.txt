@@ -10,3 +10,10 @@ backend conn with reg
 age validation???
 phone number compulsory???
 gender??
+
+
+
+
+-----------------------------------------------
+
+Password strength / three month change

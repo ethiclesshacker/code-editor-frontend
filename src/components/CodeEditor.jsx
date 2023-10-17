@@ -40,11 +40,11 @@ export default function CodeEditor() {
   }
 
   return (
-    <div id="main" className="grid grid-cols-10 grid-rows-10 h-[100%] gap-2">
+    <div id="main" className="grid h-[100%] grid-cols-10 grid-rows-10 gap-2">
       {/* <!-- Element 1: Header--> */}
       <div
         id="topbar"
-        className="col-span-7 col-start-1 row-start-1 row-span-1 border border-solid border-gray-400 bg-[#282c34] rounded-lg pr-2 flex justify-between items-center"
+        className="col-span-7 col-start-1 row-span-1 row-start-1 flex items-center justify-between rounded-lg border border-solid border-gray-400 bg-[#282c34] pr-2"
       >
         {/* <div className="text-2xl text-center text-white">
                     Code Editor
@@ -53,7 +53,7 @@ export default function CodeEditor() {
         <select
           name="lang"
           id="lang"
-          className="mr-auto ml-2 text-lg w-40 rounded-lg"
+          className="ml-2 mr-auto w-40 rounded-lg text-lg"
         >
           <option value="python3">Python3</option>
           <option value="javascript">Javascript</option>
@@ -65,14 +65,14 @@ export default function CodeEditor() {
           type="reset"
           id="rst"
           onClick={() => setCodeValue('')}
-          className="mr-2 text-xl rounded-md border border-solid border-gray-400 bg-gray-200 text-center w-20 h-10"
+          className="mr-2 h-10 w-20 rounded-md border border-solid border-gray-400 bg-gray-200 text-center text-xl"
         >
           Clear
         </button>
         <button
           id="run"
           onClick={runCode}
-          className="w-20 h-10 text-xl rounded-md border border-solid border-gray-400 bg-gray-200 text-center"
+          className="h-10 w-20 rounded-md border border-solid border-gray-400 bg-gray-200 text-center text-xl"
         >
           {' '}
           Run{' '}
@@ -82,9 +82,9 @@ export default function CodeEditor() {
       {/* <!-- Element 2: Code Holder --> */}
       <div
         id="scode"
-        className="col-span-7 row-span-9 col-start-1 row-start-2 h-[100%] border border-solid border-black"
+        className="row-span-9 col-span-7 col-start-1 row-start-2 h-[100%] border border-solid border-black"
       >
-        <div name="code" id="code-text" className="p-2 m-0 text-lg">
+        <div name="code" id="code-text" className="m-0 p-2 text-lg">
           <CodeMirror
             value={codeValue}
             options={{
@@ -102,13 +102,13 @@ export default function CodeEditor() {
       {/* <!-- ELement 3: I/O --> */}
       <div
         id="sidebar1"
-        className="col-span-3 col-start-8 row-start-1 row-span-full flex flex-col pr-4 p-4 pb-4 pt-4 bg-[#282c34] rounded-lg"
+        className="col-span-3 col-start-8 row-span-full row-start-1 flex flex-col rounded-lg bg-[#282c34] p-4 pb-4 pr-4 pt-4"
       >
         <div
           id="cont-input"
-          className="flex-1 flex flex-col w-[100%] h-[50%] p-1"
+          className="flex h-[50%] w-[100%] flex-1 flex-col p-1"
         >
-          <label for="input" className="text-2xl text-white">
+          <label htmlFor="input" className="text-2xl text-white">
             Input:{' '}
           </label>
           {/* <br /> */}
@@ -121,12 +121,12 @@ export default function CodeEditor() {
         </div>
         <div
           id="cont-output"
-          className="flex-1 flex flex-col w-[100%] h-[50%] p-1"
+          className="flex h-[50%] w-[100%] flex-1 flex-col p-1"
         >
           <label htmlFor="output" className="text-2xl text-white">
             Output:{' '}
           </label>
-          <pre id="output" name="output" className="box flex-1 bg-white">
+          <pre id="output" name="output" className="box flex-1 bg-white pt-2">
             {' '}
             {outputText}{' '}
           </pre>
