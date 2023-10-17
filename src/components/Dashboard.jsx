@@ -1,6 +1,7 @@
 import React from 'react'
 // import { useState } from "react";
 // import { Link} from "react-router-dom";
+import DashboardRow from './DashboardRow';
 import SideBarItem from './SideBarItem';
 import { FaHouse, FaCode, FaDoorOpen } from 'react-icons/fa6';
 
@@ -38,6 +39,7 @@ export default function Dashboard() {
           {' '}
           Hello, {localStorage.getItem('userName')} !
         </p>
+        <DashboardRow/>
       </div>
     </div>
   )
