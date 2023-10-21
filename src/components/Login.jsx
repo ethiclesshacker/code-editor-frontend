@@ -30,7 +30,7 @@ export default function Login() {
 
   function loginUser() {
     // alert(`Logging in user... ${email} ${password}`);
-    const API_URL = 'http://localhost:5050'
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5050'
     const API_ENDPOINT = '/api/users/login'
     const API = `${API_URL}${API_ENDPOINT}`
     const options = {
@@ -54,7 +54,7 @@ export default function Login() {
             localStorage.setItem('userName', response.data.name)
             setAuthenticated(true)
             console.log(localStorage.getItem('authenticated'))
-            navigate('/code')
+            navigate('/dashboard')
           } else {
             alert('Username or password is wrong!!')
           }

@@ -16,7 +16,7 @@ export default function CodeEditor() {
       codeLanguage: 'python3',
     }
 
-    const API_URL = 'http://localhost:5050'
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5050'
     const API_ENDPOINT = '/api/code/run'
     const API = `${API_URL}${API_ENDPOINT}`
     const options = {
