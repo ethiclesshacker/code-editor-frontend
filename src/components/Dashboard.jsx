@@ -54,7 +54,7 @@ export default function Dashboard() {
       </div>
 
       <div id="topbar" className='col-span-16 col-start-5 row-start-1 row-span-3 rounded-lg border border-solid border-gray-400 bg-[#313467] mb-0.5 ml-2 mr-2'>
-        <p className='ml-4 mt-2 text-white text-xl'> Dashboard #Will change according to the option </p>
+        <p className='ml-4 mt-2 text-white text-xl'> Dashboard #Will show the path </p>
       </div>
 
       <div
