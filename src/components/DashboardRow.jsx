@@ -8,7 +8,7 @@ function DashboardRow() {
     <div>
         <details>
             <summary className='pl-4'>
-                continue from where you left...
+                Continue from where you left...
             </summary>
             <div className='flex flex-row pl-8 pt-4 space-x-3'>
                 <DashboardRowItem/>
@@ -17,6 +17,7 @@ function DashboardRow() {
                 <DashboardRowItem/>
             </div>
         </details>
+        
         <details>
             <summary className='pl-4'>
                 Quizzes
