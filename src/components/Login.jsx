@@ -54,7 +54,7 @@ export default function Login() {
             localStorage.setItem('userName', response.data.name)
             setAuthenticated(true)
             console.log(localStorage.getItem('authenticated'))
-            navigate('/dashboard')
+            navigate('/user/dashboard')
           } else {
             alert('Username or password is wrong!!')
           }
