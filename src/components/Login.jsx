@@ -67,8 +67,8 @@ export default function Login() {
   }
   return (
     <div className="flex h-[100%] items-center justify-center">
-      <div className="h-96 w-80 rounded-lg border border-solid border-blue-50 bg-[#ecf9ff] text-center shadow-2xl ">
-        <div className="mb-4 pt-7 font-serif text-2xl"> Login </div>
+      <div className="h-80 w-80 rounded-lg border border-solid border-blue-50 bg-[#ecf9ff] text-center shadow-2xl ">
+        <div className="mb-4 pt-6 font-serif text-2xl"> Login </div>
         <input
           type="email"
           value={email}
@@ -87,7 +87,7 @@ export default function Login() {
           id="login-log"
           onClick={loginUser}
           className="mb-4 mt-7 h-10 w-60 
-          border-0 border-sky-600 bg-sky-700 
+          border-0 border-sky-600 bg-[#005aad]
           text-center text-xl text-white"
         >
           Login
