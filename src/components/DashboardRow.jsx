@@ -10,7 +10,7 @@ function DashboardRow() {
             <summary className='pl-4'>
                 Continue from where you left...
             </summary>
-            <div className='flex flex-row pl-8 pt-4 space-x-3'>
+            <div className='flex flex-row pl-8 pr-4 pt-4 space-x-3'>
                 <DashboardRowItem/>
                 <DashboardRowItem/>
                 <DashboardRowItem/>

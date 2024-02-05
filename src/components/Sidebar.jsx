@@ -7,7 +7,9 @@ import { MdLeaderboard } from 'react-icons/md'
 import { FiSettings } from 'react-icons/fi'
 import { VscAccount } from 'react-icons/vsc'
 export default function Sidebar() {
+  
     return (
+      
         <div
         id="sidebar"
         className="col-span-4 col-start-1 row-span-20 row-start-1 mb-0.5 rounded-lg border border-solid border-gray-400 bg-[#313467]"

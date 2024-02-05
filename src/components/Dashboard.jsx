@@ -2,6 +2,7 @@ import react from 'react'
 import DashboardRow from './DashboardRow'
 
 export default function Dashboard() {
+    
     return (
     <div
         id="dash"
