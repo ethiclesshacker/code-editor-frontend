@@ -3,12 +3,7 @@ import React from 'react'
 // import { Link} from "react-router-dom";
 import Dashboard from './Dashboard';
 import Sidebar from './Sidebar';
-import { FaHouse, FaCode, FaDoorOpen } from 'react-icons/fa6';
-import { BsSearch } from 'react-icons/bs';
-import { TbReportAnalytics } from 'react-icons/tb'
-import { MdLeaderboard } from 'react-icons/md'
-import { FiSettings } from 'react-icons/fi'
-import { VscAccount } from 'react-icons/vsc'
+
 import { Outlet } from 'react-router-dom';
 
 export default function WindowLayout() {

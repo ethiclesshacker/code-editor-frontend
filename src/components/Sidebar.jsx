@@ -15,7 +15,7 @@ export default function Sidebar() {
         className="col-span-4 col-start-1 row-span-20 row-start-1 mb-0.5 rounded-lg border border-solid border-gray-400 bg-[#313467]"
       >
         <div className='flex items-center justify-center w-100%'>
-          <img src='ProfImg.jpg' alt='Profile Image' className='mt-4 w-20 h-20 rounded-full'></img>
+          <img src='/ProfImg.jpg' alt='Profile Image' className='mt-4 w-20 h-20 rounded-full'></img>
         </div>
         <p className="flex items-center justify-center w-100% font-semi-bold pb-1 pt-2 text-2xl text-white mb-8">
           {' '}
