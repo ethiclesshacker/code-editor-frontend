@@ -7,7 +7,7 @@ import Dashboard from './components/Dashboard'
 import Logout from './components/Logout'
 import AddQuestion from './components/AddQuestion'
 import WindowLayout from './components/WindowLayout'
-import Question_Code from './components/Question_Code'
+import Question_Code from './components/QuestionCode'
 
 import './App.css'
 
