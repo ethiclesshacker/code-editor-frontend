@@ -14,7 +14,7 @@ const images = [
 ];
 
 
-export default function DashboardRowItem() {
+export default function DashboardRowItem(props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(Math.floor(Math.random() * images.length))
   const changeImage = () => {
     const randomNumber = Math.floor(Math.random() * images.length);
@@ -29,7 +29,7 @@ export default function DashboardRowItem() {
 
     </div>
     <div className='row-start-4 row-span-2 mt-2 ml-1'> 
-        Question 
+      {props["questionString"]}
     </div>
     </div>
   )

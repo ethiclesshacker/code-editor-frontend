@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Video upload</title>
+    <style>
+      body {
+        padding-top: 20px;
+        margin-top: 10%;
+        margin-left: 35%;
+        width: 500px;
+        height: 320px;
+        border: 2px solid black;
+        border-radius: 10px;
+        font-weight: bold;
+        background: #eecda3;
+        background: -webkit-linear-gradient(
+          to right,
+          #eecda3,
+          #ef629f
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #eecda3, #ef629f);
+      }
+      div {
+        width: 450px;
+        margin-bottom: 10px;
+        height: 200px;
+        border: 1px solid black;
+        background-color: white;
+      }
+      input#but {
+        width: 100px;
+        height: 40px;
+      }
+      input.hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+        <label for="fileToUpload"> Select the video to upload: </label>
+        <input
+          type="file"
+          name="fileToUpload"
+          id="fileToUpload"
+        />
+        <br />
+        <br />
+        <input type="text" class="hidden" name="bytes" value="" />
+
+        <button id="but" value="submit" type="submit" onclick="getText()">
+          Upload Video
+        </button>
+
+        <br /><br />
+      <div id="text"></div>
+    </center>
+
+    <script>
+      let fileElement = document.querySelector("#fileToUpload");
+
+      function getBase64(file) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+          console.log(reader.result);
+        };
+        reader.onerror = function (error) {
+          console.log("Error: ", error);
+        };
+      }
+
+      let getText = async () => {
+        // event.preventDefault();
+        let fileBase64 = await getBase64(fileElement.files[0]);
+        fetch("http://127.0.0.1/result", {
+          method: "POST",
+          body: JSON.stringify({ "fileBase64":fileBase64 }),
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            document.querySelector("#text").innerHTML = data;
+          });
+      };
+    </script>
+  </body>
+</html>
