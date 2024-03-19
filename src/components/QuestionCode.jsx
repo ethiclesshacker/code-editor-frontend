@@ -119,7 +119,7 @@ export default function QuestionCode() {
       <div className="col-start-5 col-span-7 grid h-[100%] max-h-screen grid-cols-5 grid-rows-12 gap-2 border border-solid border-black">
         <div
           id="topbar"
-          className="col-span-5 h-12 col-start-1 row-start-1 row-end-2 flex items-center justify-between border border-solid border-gray-400 bg-[#282c34] pr-2"
+          className="col-span-5 h-12 col-start-1 row-start-1 row-end-2 flex items-center justify-between border border-solid border-gray-400 pr-2"
         >
           <select
             name="lang"

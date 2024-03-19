@@ -10,7 +10,7 @@ export default function WindowLayout() {
   return (
     <div
       id="main"
-      className="grid h-[100%] grid-cols-20 grid-rows-20 pb-2 pl-2 pr-2 pt-2"
+      className="grid h-[100%] grid-cols-20 grid-rows-20 pb-2 pl-2 pr-2 pt-2 gap-4"
     >
       {/* TOPBAR */}
       
@@ -29,9 +29,9 @@ export default function WindowLayout() {
       {/* SIDEBAR */}
       <Sidebar />
 
-      <div id="topbar" className='col-span-16 col-start-5 row-start-1 row-span-3 rounded-lg border border-solid border-gray-400 bg-[#313467] mb-0.5 ml-2 mr-2'>
+      {/* <div id="topbar" className='col-span-16 col-start-5 row-start-1 row-span-3 rounded-lg border border-solid border-gray-400 bg-[#313467] mb-0.5 ml-2 mr-2'>
         <p className='ml-4 mt-2 text-white text-xl'> Dashboard #Will show the path </p>
-      </div>
+      </div> */}
 
       {/* <Dashboard/> */}
       <Outlet/>
