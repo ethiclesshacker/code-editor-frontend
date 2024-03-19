@@ -39,10 +39,10 @@ export default function QuestionCode() {
       });
   }
   return (
-    <div id="main" className="grid h-[100%] w-[100%] grid-cols-11 gap-2 p-2 m-0 max-h-screen">
-      <div className="h-[100%] overflow-scroll col-span-4 col-start-1 border border-solid border-black grid grid-rows-11">
-        <div className="row-start-1 row-span-7 overflow-scroll">
-          <div>
+    <div id="main" className="fixed grid h-[100%] w-[100%] grid-cols-11 gap-1 p-1 m-0">
+      <div className="h-[100%] overflow-y-auto col-span-4 col-start-1 grid grid-rows-11 gap-1">
+        {/* <div className="row-start-1 row-span-7 overflow-scroll"> */}
+          <div className="bg-white border border-solid border-black row-start-1 row-span-7 overflow-y-auto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
             laudantium quam eum quia magni sed, ad consectetur quisquam
             perspiciatis, expedita saepe nemo? Nam suscipit, nemo fuga
@@ -102,14 +102,15 @@ export default function QuestionCode() {
             blanditiis illum ipsum odio! A asperiores excepturi sed similique.
             Facilis maiores labore quos dolorem, ea dolorum cum.
           </div>
-          <div>
+          {/* </div> */}
+          <div className="row-start-8 row-span-4 overflow-y-auto bg-white border border-solid border-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
-          </div>
+          {/* </div> */}
         </div>
         <div></div>
       </div>
@@ -118,12 +119,12 @@ export default function QuestionCode() {
       <div className="col-start-5 col-span-7 grid h-[100%] max-h-screen grid-cols-5 grid-rows-12 gap-2 border border-solid border-black">
         <div
           id="topbar"
-          className="col-span-5 col-start-1 row-start-1 row-end-2 flex items-center justify-between rounded-lg border border-solid border-gray-400 bg-[#282c34] pr-2"
+          className="col-span-5 h-12 col-start-1 row-start-1 row-end-2 flex items-center justify-between border border-solid border-gray-400 bg-[#282c34] pr-2"
         >
           <select
             name="lang"
             id="lang"
-            className="ml-2 mr-auto h-10 w-40 rounded-lg text-center"
+            className="ml-2 mr-auto h-10 w-40 rounded-lg text-lg"
           >
             <option value="python3">Python3</option>
             <option value="javascript">Javascript</option>
@@ -158,7 +159,7 @@ export default function QuestionCode() {
 
         <div
           id="scode"
-          className="col-span-5 col-start-1 row-start-2 row-end-[-1] border border-solid border-black overflow-scroll"
+          className="col-span-5 col-start-1 row-start-2 row-end-[-1] border border-solid border-black overflow-y-auto"
         >
           <div name="code" id="code-text" className="m-0 p-2 text-lg">
             <CodeMirror
@@ -170,7 +171,7 @@ export default function QuestionCode() {
                 // theme: 'monokai',
               }}
               onChange={setCodeValue}
-              className="h-[100%] overflow-scroll"
+              className="h-[100%]"
             />
           </div>
         </div>
