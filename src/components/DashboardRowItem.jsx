@@ -23,7 +23,7 @@ export default function DashboardRowItem(props) {
   useEffect(() => changeImage(), [])
 
   return (
-    <div className='w-60 h-48 border border-solid border-slate-600 rounded-lg grid grid-rows-5 transition-all duration-100  ease-out hover:w-80 hover:h-60  '>
+    <div className='w-60 h-48 block shrink-0 border border-solid border-slate-600 rounded-lg grid grid-rows-5 transition-all duration-100  ease-out hover:w-80 hover:h-60  '>
     <div className='row-start-1 row-span-3'>
       <img src={images[currentImageIndex]} className='w-full h-full rounded-t-lg'></img> 
 
