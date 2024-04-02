@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import CodeMirror from "@uiw/react-codemirror";
-import axios from "axios";
+import React from "react";
 
 export default function EditPage() {
     return (

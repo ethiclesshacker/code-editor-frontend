@@ -9,6 +9,7 @@ import AddQuestion from './components/AddQuestion'
 import WindowLayout from './components/WindowLayout'
 import Question_Code from './components/QuestionCode'
 import Editpage from './EditPage'
+import Mcq_questions from './components/MCQ'
 
 import './App.css'
 import EditPage from './EditPage'
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/logout" element={<Logout />}></Route>
         <Route path="question" element={<Question_Code />}></Route>
         <Route path='profile' element={<Editpage />}></Route>
+        <Route path='mcq' element={<Mcq_questions />}></Route>
         {/* <Route exact path='/' element={< CodeArea />}></Route> */}
         <Route path='user' element= {<WindowLayout/>}>
           <Route path='dashboard' element={<Dashboard/>}/>
