@@ -4,9 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 // import { GoogleLogin } from "react-google-login";
 
-const clientId =
-  '50562650091-b2rvcd9dkm3i16h8dpae5niqejvtno62.apps.googleusercontent.com'
-
 export default function Login() {
   const navigate = useNavigate()
 
@@ -30,7 +27,7 @@ export default function Login() {
 
   function loginUser() {
     // alert(`Logging in user... ${email} ${password}`);
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5050'
+    const API_URL = 'http://localhost:5050'
     const API_ENDPOINT = '/api/users/login'
     const API = `${API_URL}${API_ENDPOINT}`
     const options = {
@@ -93,7 +90,7 @@ export default function Login() {
           Login
         </button>
         <div id="login-fp">
-          <Link to="/" className="text-sky-800 no-underline">
+          <Link to="#" className="text-sky-800 no-underline">
             Forgot Password?
           </Link>
         </div>
